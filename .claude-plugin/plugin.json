@@ -1,0 +1,13 @@
+{
+  "name": "prompt-clarifier",
+  "version": "1.0.0",
+  "description": "Asks the one missing piece in a vague coding request, then waits. Stays quiet when the request is already specific.",
+  "author": {
+    "name": "David-Florian2013",
+    "url": "https://github.com/David-Florian2013"
+  },
+  "homepage": "https://github.com/David-Florian2013/prompt-clarifier",
+  "repository": "https://github.com/David-Florian2013/prompt-clarifier",
+  "license": "MIT",
+  "keywords": ["skills", "prompt", "claude-code", "agent-skills"]
+}

@@ -1,0 +1,16 @@
+# prompt-clarifier
+
+One Agent Skill. No script, no dependency, no network call.
+
+Repo: https://github.com/David-Florian2013/prompt-clarifier
+
+Install for Claude Code:
+
+npx --yes skills add David-Florian2013/prompt-clarifier -g -a claude-code -y -s prompt-clarifier
+
+Or download prompt-clarifier.skill from the latest GitHub release and unzip it into ~/.claude/skills.
+
+The skill asks for the one missing piece in a vague coding request (target, change, or what done means) and waits. If the request is already specific, it stays quiet. It does not invent a file name.
+
+Skill file: skills/prompt-clarifier/SKILL.md
+MIT.

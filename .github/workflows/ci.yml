@@ -1,0 +1,33 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  skill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Skill file and zip match
+        run: |
+          python3 - << 'PY'
+          import zipfile
+          from pathlib import Path
+          text = Path("skills/prompt-clarifier/SKILL.md").read_text()
+          assert text.startswith("---\n")
+          head = text.split("---", 2)[1]
+          assert "name: prompt-clarifier" in head
+          z = zipfile.ZipFile("packaged/prompt-clarifier.skill")
+          names = z.namelist()
+          assert names == ["prompt-clarifier/SKILL.md"], names
+          assert z.read("prompt-clarifier/SKILL.md").decode() == text
+          print("ok")
+          PY
+      - name: install.sh into an empty directory
+        run: |
+          dest=$(mktemp -d)
+          CLAUDE_SKILLS_DIR="$dest" ./install.sh
+          test -f "$dest/prompt-clarifier/SKILL.md"
+          grep -q "name: prompt-clarifier" "$dest/prompt-clarifier/SKILL.md"

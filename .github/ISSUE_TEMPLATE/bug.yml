@@ -1,0 +1,24 @@
+name: Bug
+description: The skill asked when it should have stayed quiet, or it invented a target.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: prompt
+    attributes:
+      label: The prompt you sent
+    validations:
+      required: true
+  - type: textarea
+    id: reply
+    attributes:
+      label: What the agent said back
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What it should have done
+      description: Stay quiet, ask only for the file, or restate without inventing a path.
+    validations:
+      required: true

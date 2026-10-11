@@ -1,0 +1,19 @@
+{
+  "name": "prompt-clarifier",
+  "owner": {
+    "name": "David-Florian2013",
+    "url": "https://github.com/David-Florian2013"
+  },
+  "metadata": {
+    "description": "One skill. Vague prompt in, one question or a short restatement out."
+  },
+  "plugins": [
+    {
+      "name": "prompt-clarifier",
+      "source": "./",
+      "description": "Clarify a vague coding request before any work starts.",
+      "strict": false,
+      "skills": ["./skills/prompt-clarifier"]
+    }
+  ]
+}

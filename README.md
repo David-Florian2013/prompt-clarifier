@@ -5,7 +5,7 @@ Half of bad AI output starts with a vague prompt. "Fix this." "Make it better." 
 prompt-clarifier catches that moment *before* you send it. It spots the one thing actually missing from your request — scope, target file, or what "done" means — and asks exactly that, nothing else. Clear enough already? It stays out of your way.
 
 <p align="center">
-  <img src="docs/banner.png" alt="Before: fix this. After: a specific auth.js bug, with a definition of done." width="100%">
+  <img src="docs/banner.png" alt="Light card. Before: fix this. After: fix the 401 in auth.js, and wait for a yes." width="100%">
 </p>
 
 **Before:**
@@ -35,6 +35,8 @@ GitHub CLI (installs the latest release):
 ```bash
 gh skill install David-Florian2013/prompt-clarifier prompt-clarifier --agent claude-code --scope user
 ```
+
+`gh skill` is a preview command. If the CLI says it doesn't exist, update GitHub CLI. The `npx` line does not need it.
 
 Or copy the folder yourself. No package manager, no API key.
 

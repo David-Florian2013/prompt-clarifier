@@ -33,7 +33,7 @@ npx --yes skills add David-Florian2013/prompt-clarifier -g -a claude-code -y -s 
 GitHub CLI (installs the latest release):
 
 ```bash
-gh skill install David-Florian2013/prompt-clarifier --agent claude-code --scope user
+gh skill install David-Florian2013/prompt-clarifier prompt-clarifier --agent claude-code --scope user
 ```
 
 Or copy the folder yourself. No package manager, no API key.

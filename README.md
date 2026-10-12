@@ -36,7 +36,7 @@ GitHub CLI (installs the latest release):
 gh skill install David-Florian2013/prompt-clarifier prompt-clarifier --agent claude-code --scope user
 ```
 
-`gh skill` is a preview command. If the CLI says it doesn't exist, update GitHub CLI. The `npx` line does not need it.
+`gh skill` needs [GitHub CLI 2.90.0 or newer](https://github.com/cli/cli/releases/tag/v2.90.0). It is still a public preview. This install was checked with 2.101.0. The `npx` line does not need `gh`.
 
 Or copy the folder yourself. No package manager, no API key.
 

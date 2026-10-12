@@ -1,5 +1,7 @@
 # prompt-clarifier
 
+A Claude Code skill for a vague prompt. Also works in Cursor and Codex.
+
 Half of bad AI output starts with a vague prompt. "Fix this." "Make it better." "Add login." You hit enter, wait, and get something close but not quite right — then spend ten minutes explaining what you actually meant.
 
 prompt-clarifier catches that moment *before* you send it. It spots the one thing actually missing from your request — scope, target file, or what "done" means — and asks exactly that, nothing else. Clear enough already? It stays out of your way.

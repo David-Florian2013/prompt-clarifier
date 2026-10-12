@@ -1,22 +1,22 @@
 # prompt-clarifier
 
-A Claude Code skill for a vague prompt. Also works in Cursor and Codex.
+A Claude Code skill. A vague prompt gets one question. Then it waits.
+
+<p align="center">
+  <img src="docs/banner.png" alt="Before: fix this. After: Fix the 401 in auth.js when the password is right. Done: 10 logins, no failures." width="100%">
+</p>
+
+**Before:** "fix this"
+
+**After:** "Fix the bug in `auth.js` where login with a correct password sometimes returns 401 — looks like a race condition in token verification. Done when existing login tests pass and 10 consecutive logins don't fail once."
+
+```bash
+npx --yes skills add David-Florian2013/prompt-clarifier -g -a claude-code -y -s prompt-clarifier
+```
 
 Half of bad AI output starts with a vague prompt. "Fix this." "Make it better." "Add login." You hit enter, wait, and get something close but not quite right — then spend ten minutes explaining what you actually meant.
 
 prompt-clarifier catches that moment *before* you send it. It spots the one thing actually missing from your request — scope, target file, or what "done" means — and asks exactly that, nothing else. Clear enough already? It stays out of your way.
-
-<p align="center">
-  <img src="docs/banner.png" alt="Light card. Before: fix this. After: fix the 401 in auth.js, and wait for a yes." width="100%">
-</p>
-
-**Before:**
-
-> "fix this"
-
-**After:**
-
-> "Fix the bug in `auth.js` where login with a correct password sometimes returns 401 — looks like a race condition in token verification. Done when existing login tests pass and 10 consecutive logins don't fail once."
 
 One clarifying question instead of one wrong guess.
 

@@ -1,0 +1,29 @@
+prompt-clarifier checklist
+source: skills/prompt-clarifier/SKILL.md
+model: none    network: none
+
+1  fix this
+   target   missing
+   change   missing
+   success  missing
+   action   ASK
+   reply    Which file do you mean? I get that you want it fixed — just need to know where.
+   invented no
+
+2  make auth.js faster
+   target   auth.js
+   change   missing
+   success  missing
+   action   WAIT
+   note     target is known, the change is not. It does not start.
+
+3  Fix the bug in `auth.js` where login with a correct password sometimes
+   returns 401 — looks like a race condition in token verification. Done
+   when existing login tests pass and 10 consecutive logins don't fail
+   once.
+   target   auth.js
+   change   present
+   success  present
+   action   QUIET
+
+result  vague prompt did not invent a file; the specific one stayed quiet

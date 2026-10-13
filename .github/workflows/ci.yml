@@ -31,3 +31,17 @@ jobs:
           CLAUDE_SKILLS_DIR="$dest" ./install.sh
           test -f "$dest/prompt-clarifier/SKILL.md"
           grep -q "name: prompt-clarifier" "$dest/prompt-clarifier/SKILL.md"
+
+      - name: demo checklist matches the transcript
+        run: |
+          python3 scripts/demo.py > /tmp/demo.out
+          diff -u docs/demo-transcript.txt /tmp/demo.out
+          python3 - << 'PY'
+          from pathlib import Path
+          out = Path("docs/demo-transcript.txt").read_text().strip()
+          readme = Path("README.md").read_text()
+          if out not in readme:
+              raise SystemExit("README does not contain the demo transcript")
+          print("demo matches readme")
+          PY
+

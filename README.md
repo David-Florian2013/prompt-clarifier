@@ -14,6 +14,47 @@ A Claude Code skill. A vague prompt gets one question. Then it waits.
 npx --yes skills add David-Florian2013/prompt-clarifier -g -a claude-code -y -s prompt-clarifier
 ```
 
+## See it run
+
+The skill is instructions for the agent. This script does not call a model and does not use the network. It runs the checklist in [`SKILL.md`](skills/prompt-clarifier/SKILL.md): no file means ask, a vague change means wait, and a request that already names the file, the change, and what done means stays quiet.
+
+<p align="center">
+  <img src="docs/demo-terminal.png" alt="Terminal output of python3 scripts/demo.py. fix this asks for the file and invents nothing. A specific auth.js request stays quiet." width="100%">
+</p>
+
+```text
+$ python3 scripts/demo.py
+prompt-clarifier checklist
+source: skills/prompt-clarifier/SKILL.md
+model: none    network: none
+
+1  fix this
+   target   missing
+   change   missing
+   success  missing
+   action   ASK
+   reply    Which file do you mean? I get that you want it fixed — just need to know where.
+   invented no
+
+2  make auth.js faster
+   target   auth.js
+   change   missing
+   success  missing
+   action   WAIT
+   note     target is known, the change is not. It does not start.
+
+3  Fix the bug in `auth.js` where login with a correct password sometimes
+   returns 401 — looks like a race condition in token verification. Done
+   when existing login tests pass and 10 consecutive logins don't fail
+   once.
+   target   auth.js
+   change   present
+   success  present
+   action   QUIET
+
+result  vague prompt did not invent a file; the specific one stayed quiet
+```
+
 Half of bad AI output starts with a vague prompt. "Fix this." "Make it better." "Add login." You hit enter, wait, and get something close but not quite right — then spend ten minutes explaining what you actually meant.
 
 prompt-clarifier catches that moment *before* you send it. It spots the one thing actually missing from your request — scope, target file, or what "done" means — and asks exactly that, nothing else. Clear enough already? It stays out of your way.

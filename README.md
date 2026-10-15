@@ -137,6 +137,10 @@ Files are in [`.claude-plugin/`](.claude-plugin/). This path is not what CI runs
 - It will not fill a blank with `[fill in]`. If it cannot tell which file you mean, it asks.
 - Examples in Czech and English are illustrations. The seconds and scores in them are not measurements.
 
+## After the request is clear
+
+Writing the change, then checking the diff, is a different repo: [write-then-check](https://github.com/David-Florian2013/write-then-check). This skill does not start that loop.
+
 ## License
 
 [MIT](LICENSE).
